@@ -1,0 +1,5 @@
+$('#rps-result-area').html('<%= j render 'result' %>')
+
+$('.wait-modal-bet-span').removeClass('d-flex').addClass('d-none')
+$('#rps-wait-modal').modal('hide')
+$('#rps-result-modal').modal('show')

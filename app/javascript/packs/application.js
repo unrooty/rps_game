@@ -10,6 +10,15 @@ global.$ = $;
 global.jQuery = $;
 import 'bootstrap/dist/js/bootstrap';
 
+$(document).ready(function () {
+    $('#rock-paper-scissors').on('click', '.bet-select', function () {
+        const bet = $(this).attr('data-bet');
+
+        $(`#rps-wait-modal .${bet}-span`).removeClass('d-none').addClass('d-flex');
+        $('#rps-wait-modal').modal('show')
+    });
+});
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
