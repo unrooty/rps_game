@@ -15,5 +15,9 @@ class RockPaperScissorsController < ApplicationController
     @context[:human_choice] = game_service.human_choice
 
     render "result.js.erb"
+  rescue Errors::BetError
+    @context[:error_message] = t("illegal_bet", bet: params[:bet])
+
+    render "error.js.erb"
   end
 end
