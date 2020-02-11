@@ -38,4 +38,12 @@ en:
   rock: 'Rock'
   paper: 'Paper'
   scissors: 'Scissors'
+  you_win: 'You win'
+  you_lost: "You lost"
+  curb_wins: "with %{choice} wins"
+  curb_lost: "with %{choice} lost"
+  draw: "Draw"
+  draw_threw: "and You threw %{choice}"
+  waiting: "WAITING CURB’S CHOOSE"
+  your_bet: "Your bet"
 
