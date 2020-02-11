@@ -47,8 +47,8 @@ class RockPaperScissorsService
     raise Errors::ChoiceError unless choice.in?(BETS)
   end
 
-  def build_computer_choice
-    response = CurbRps::Client.new.load_throw
+  def build_computer_choice(client = CurbRps::Client.new)
+    response = client.load_throw
 
     return response.throw if response.success? && response.valid?
 
