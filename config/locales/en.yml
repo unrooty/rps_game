@@ -46,4 +46,5 @@ en:
   draw_threw: "and You threw %{choice}"
   waiting: "WAITING CURB’S CHOOSE"
   your_bet: "Your bet"
+  illegal_bet: "Illegal bet `%{bet}` was provided!"
 

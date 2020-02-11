@@ -44,7 +44,9 @@ class RockPaperScissorsService
   end
 
   def validate_choice(choice)
-    raise Errors::ChoiceError unless choice.in?(BETS)
+    return if BETS.include?(choice)
+
+    raise Errors::BetError, "Illegal bet `#{choice}` was provided!"
   end
 
   def build_computer_choice(client = CurbRps::Client.new)
