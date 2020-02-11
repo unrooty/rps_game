@@ -10,14 +10,26 @@ class RockPaperScissorsController < ApplicationController
 
     game_service.play_game
 
-    @context[:result] = game_service.result
-    @context[:computer_choice] = game_service.computer_choice
-    @context[:human_choice] = game_service.human_choice
+    @context = {
+      result: game_service.result,
+      computer_choice: game_service.computer_choice,
+      human_choice: game_service.human_choice,
+    }
 
-    render "result.js.erb"
+    respond_to do |format|
+      format.js { render "result.js.erb" }
+      format.json do
+        render json: @context
+      end
+    end
   rescue Errors::BetError
     @context[:error_message] = t("illegal_bet", bet: params[:bet])
 
-    render "error.js.erb"
+    respond_to do |format|
+      format.js { render "error.js.erb" }
+      format.json do
+        render json: @context
+      end
+    end
   end
 end
