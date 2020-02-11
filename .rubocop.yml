@@ -1,0 +1,39 @@
+AllCops:
+  TargetRubyVersion: 2.6.5
+  Exclude:
+    - bin/**/*
+    - db/migrate/*
+    - features/**/*
+    - vendor/cache/**/*
+    - node_modules/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - config/routes.rb
+    - lib/tasks/cucumber.rake
+    - lib/tasks/db.rake
+    - config/environments/development.rb
+    - config/environments/production.rb
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
