@@ -5,7 +5,7 @@ module CurbRps
     attr_reader :throw
 
     def initialize(response)
-      @json_response = response.parse(:json)
+      @json_response = response.parse(:json).with_indifferent_access
       @throw = @json_response[:body]
     end
 
