@@ -14,9 +14,9 @@ class RockPaperScissorsService
   attr_reader :result
 
   def initialize(human_choice)
-    validate_choice(human_choice)
+    @human_choice = human_choice.downcase
 
-    @human_choice = human_choice
+    validate_choice(@human_choice)
   end
 
   def play_game
@@ -52,8 +52,10 @@ class RockPaperScissorsService
   def build_computer_choice(client = CurbRps::Client.new)
     response = client.load_throw
 
-    return response.throw if response.success? && response.valid?
+    return response.throw.downcase if response.success? && response.valid?
 
+    BETS.sample
+  rescue HTTP::TimeoutError
     BETS.sample
   end
 end
