@@ -22,7 +22,7 @@ require "simplecov"
 
 SimpleCov.start "rails"
 
-Dir[File.join(__dir__, 'support', 'shared_contexts', '**/*.rb')].each(&method(:require))
+Dir[File.join(__dir__, "support", "shared_contexts", "**/*.rb")].each(&method(:require))
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
