@@ -32,9 +32,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails', '4.0.0.beta4'
+  gem "rspec-rails", "4.0.0.beta4"
   gem "simplecov", require: false
-  gem 'webmock'
+  gem "webmock"
 end
 
 group :development do
