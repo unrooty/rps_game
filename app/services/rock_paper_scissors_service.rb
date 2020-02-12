@@ -4,7 +4,7 @@ class RockPaperScissorsService
   BETS = %w[rock paper scissors].freeze
   REVERSED_BETS = BETS.reverse
   RESULTS = [
-    DRAW = "draw",
+    TIE = "tie",
     COMPUTER = "computer",
     HUMAN = "human",
   ].freeze
@@ -35,7 +35,7 @@ class RockPaperScissorsService
 
     case computer_choice
     when human_choice
-      DRAW
+      TIE
     when winning_choice
       COMPUTER
     else
