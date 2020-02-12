@@ -13,7 +13,7 @@ RSpec.describe RockPaperScissorsController, type: :controller do
   end
 
   describe "Post play" do
-    let(:curb_stub) do
+    let!(:curb_stub) do
       stub_request(:get, CurbRps::Client::API_URL).to_return(
         status: 200, body: '{"code":200, "body": "rock"}',
         headers: { "content-type" => "application/json; charset=utf-8" }
