@@ -33,7 +33,7 @@ end
 
 group :test do
   gem "rspec-rails"
-  gem "simplecov"
+  gem "simplecov", require: false
   gem 'webmock'
 end
 

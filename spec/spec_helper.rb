@@ -18,6 +18,12 @@
 
 require "webmock/rspec"
 
+require "simplecov"
+
+SimpleCov.start "rails"
+
+Dir[File.join(__dir__, 'support', 'shared_contexts', '**/*.rb')].each(&method(:require))
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
@@ -96,4 +102,6 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  WebMock.allow_net_connect!
 end
