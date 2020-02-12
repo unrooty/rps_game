@@ -28,7 +28,7 @@ class RockPaperScissorsController < ApplicationController
     respond_to do |format|
       format.js { render "error.js.erb" }
       format.json do
-        render json: @context
+        render json: @context, status: 400
       end
     end
   end
