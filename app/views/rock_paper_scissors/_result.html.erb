@@ -15,8 +15,8 @@
             <h3 class="text-uppercase rps-result-modal-title"> <%= t('you_win') %>! </h3>
             <div class="mt-4 rps-result-modal-text"> Curb <%= t('curb_lost', choice: @context[:computer_choice]) %> </div>
           <% else %>
-            <h3 class="text-uppercase rps-result-modal-title"> <%= t('draw') %>! </h3>
-            <div class="mt-4 rps-result-modal-text"> Curb <%= t('draw_threw', choice: @context[:computer_choice]) %> </div>
+            <h3 class="text-uppercase rps-result-modal-title"> <%= t('tie') %>! </h3>
+            <div class="mt-4 rps-result-modal-text"> Curb <%= t('tie_threw', choice: @context[:computer_choice]) %> </div>
           <% end %>
 
           <span class="mt-4 mb-4">
