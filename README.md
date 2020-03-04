@@ -1,24 +1,57 @@
-# README
+# Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby 2.6
+* Node >= 8
+* Yarn
 
-Things you may want to cover:
+# Getting Started
 
-* Ruby version
+* Pull the source code.
+* Go into the project directory.
+* Run `bundle install` to install Ruby gems.
+* Run `yarn install` to install JS dependencies.
 
-* System dependencies
+# How to play game (using UI)
 
-* Configuration
+* Go into the project directory.
+* Run `bundle exec rails s`
+* Visit http://localhost:3000
+* Make your choice and wait util computer choose.
 
-* Database creation
+# How to play game (using JSON request)
 
-* Database initialization
+* Go into the project directory.
+* Run `bundle exec rails s`
+* Make request
+```bash
+curl -H "Content-Type: application/json" -d '{"bet": "rock"}' -X POST http://localhost:3000/play.json
+```
+**Example results**
 
-* How to run the test suite
+```json
+{
+  "result":"human", # winner
+  "computer_choice":"scissors",
+  "human_choice":"rock"
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+```json
+{ 
+  "result":"tie",
+  "computer_choice":"rock",
+  "human_choice":"rock"
+}
+```
 
-* Deployment instructions
+Please note: Available bets are rock, paper, scissors. If you provide incorrect bet, i.e.
+```bash
+curl -H "Content-Type: application/json" -d '{"bet": "rok"}' -X POST http://localhost:3000/play.json
+```
+you'll get HTTP status 400 with the following response:
 
-* ...
+```json
+{ 
+  "error_message":"Illegal bet `rok` was provided!"
+}
+```

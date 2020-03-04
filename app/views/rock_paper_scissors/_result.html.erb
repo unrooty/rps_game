@@ -1,0 +1,33 @@
+<div class="modal" id="rps-result-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="close-button d-flex flex-row justify-content-end">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="data d-flex flex-column align-items-center mt-4">
+          <% if @context[:result] == RockPaperScissorsService::COMPUTER %>
+            <h3 class="text-uppercase rps-result-modal-title"> <%= t('you_lost') %>! </h3>
+            <div class="mt-4 rps-result-modal-text"> Curb <%= t('curb_wins', choice: @context[:computer_choice]) %> </div>
+          <% elsif @context[:result] == RockPaperScissorsService::HUMAN %>
+            <h3 class="text-uppercase rps-result-modal-title"> <%= t('you_win') %>! </h3>
+            <div class="mt-4 rps-result-modal-text"> Curb <%= t('curb_lost', choice: @context[:computer_choice]) %> </div>
+          <% else %>
+            <h3 class="text-uppercase rps-result-modal-title"> <%= t('tie') %>! </h3>
+            <div class="mt-4 rps-result-modal-text"> Curb <%= t('tie_threw', choice: @context[:computer_choice]) %> </div>
+          <% end %>
+
+          <span class="mt-4 mb-4">
+            <%= image_tag "#{@context[:computer_choice]}.svg", class: 'bet-image' %>
+          </span>
+
+          <button type="button" class="modal-ok-button mt-4" data-dismiss="modal">
+            <span class="modal-ok-button-text">Ok</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

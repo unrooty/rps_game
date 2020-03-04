@@ -1,0 +1,121 @@
+#rock-paper-scissors {
+  margin-top: 100px;
+
+  .mr-200 {
+    margin-right: 200px;
+  }
+
+  h1.main-title {
+    font: Medium 50px/61px Montserrat;
+    letter-spacing: 0;
+    color: #36006C;
+    opacity: 1;
+  }
+
+  .description-text {
+    text-align: left;
+    font: Light 21px/32px Roboto;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 0.54;
+  }
+
+  .select-bet-text {
+    text-align: left;
+    font: Medium 21px/25px Montserrat;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 1;
+  }
+
+  .choices {
+    .bet-text {
+      text-align: center;
+      font: Medium 24px/29px Montserrat;
+      letter-spacing: 0;
+      color: #36006C;
+      opacity: 1;
+    }
+
+    .bet-select {
+      width: 240px;
+      height: 273px;
+      &:hover {
+        background: #F8F8F8 0 0 no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .bet-image {
+    width: 69px;
+    height: 161px;
+    opacity: 1;
+  }
+
+  .modal-ok-button {
+    width: 352px;
+    height: 73px;
+    background: #36006C 0 0 no-repeat padding-box;
+    border-radius: 5px;
+    opacity: 1;
+
+    .modal-ok-button-text {
+      text-align: center;
+      font: Medium 32px/39px Montserrat;
+      letter-spacing: 0;
+      color: #FFFFFF;
+      opacity: 1;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  #rps-result-modal {
+    .close {
+      opacity: 0.54;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .rps-result-modal-title, .rps-wait-modal-title {
+    text-align: center;
+    font: Medium 32px/39px Montserrat;
+    letter-spacing: 0;
+    color: #36006C;
+    opacity: 1;
+  }
+
+  .rps-result-modal-text {
+    text-align: left;
+    font: Light 21px/32px Roboto;
+    letter-spacing: 0;
+    color: #000000;
+    opacity: 0.54;
+  }
+
+  .rps-wait-modal-text {
+    text-align: center;
+    font: Medium 21px/25px Montserrat;
+    letter-spacing: 0;
+    color: #36006C;
+    opacity: 1;
+  }
+
+  #rps-wait-modal {
+    .your-bet-text {
+      margin-right: 140px;
+    }
+
+    .curb-icon {
+      margin-left: 70px;
+    }
+  }
+}

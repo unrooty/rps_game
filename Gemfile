@@ -23,8 +23,6 @@ gem "jbuilder", "~> 2.7"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 
-gem 'bootstrap'
-gem 'jquery-rails'
 gem "http"
 gem "rubocop"
 
@@ -34,8 +32,9 @@ group :development, :test do
 end
 
 group :test do
-  gem "rspec-rails"
-  gem "simplecov"
+  gem "rspec-rails", "4.0.0.beta4"
+  gem "simplecov", require: false
+  gem "webmock"
 end
 
 group :development do

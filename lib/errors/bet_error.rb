@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Errors
-  class ChoiceError < StandardError
+  class BetError < StandardError
     def initialize(message)
       super(message)
     end

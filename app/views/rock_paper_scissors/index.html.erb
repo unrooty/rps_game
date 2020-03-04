@@ -1,0 +1,59 @@
+<div id="rock-paper-scissors">
+  <div id="content" class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="main-title mt-4"><%= t('main-title') %></h1>
+
+    <div class="description-text mt-4" style="width: 570px">
+      <%= t('description-text') %>
+    </div>
+
+    <div class="text-uppercase mt-4"><%= t('select-bet-text') %></div>
+
+    <div class="choices d-flex flex-row justify-content-center mt-4">
+      <% @context[:bets].each do |bet| %>
+        <%= link_to play_path(bet: bet), remote: true, method: :post, 'data-bet' => "#{bet}",
+                    class: 'bet-select d-flex flex-column justify-content-center align-items-center' do %>
+          <%= image_tag "#{bet}.svg", class: 'bet-image' %>
+          <span class="mt-4 bet-text"> <%= t(bet) %> </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="modal" id="rps-wait-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="close-button d-flex flex-row justify-content-end">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="data d-flex flex-column align-items-center mt-4">
+              <h3 class="text-uppercase rps-wait-modal-title"> <%= t('waiting') %>! </h3>
+
+              <div class="d-flex flex-row align-items-center">
+                <div class="mt-4 mb-4 mr-200">
+                  <% @context[:bets].each do |bet| %>
+                  <span class="flex-column justify-content-center align-items-center
+                               d-none <%= bet %>-span wait-modal-bet-span">
+                    <%= image_tag "#{bet}.svg", class: 'bet-image' %>
+                  </span>
+                  <% end %>
+                </div>
+                <span>...  </span>
+              </div>
+
+              <div class="d-flex flex-row align-items-center mt-4">
+                <span class="rps-wait-modal-text your-bet-text"> <%= t('your_bet') %> </span>
+                <span class="curb-icon"> <%= image_tag 'curb_logo.png' %> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rps-result-area">
+  </div>
+</div>
+

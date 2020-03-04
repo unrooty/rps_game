@@ -38,4 +38,13 @@ en:
   rock: 'Rock'
   paper: 'Paper'
   scissors: 'Scissors'
+  you_win: 'You win'
+  you_lost: "You lost"
+  curb_wins: "with %{choice} wins"
+  curb_lost: "with %{choice} lost"
+  tie: "Tie"
+  tie_threw: "and You threw %{choice}"
+  waiting: "WAITING CURB’S CHOOSE"
+  your_bet: "Your bet"
+  illegal_bet: "Illegal bet `%{bet}` was provided!"
 
